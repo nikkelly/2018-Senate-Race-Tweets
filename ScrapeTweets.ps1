@@ -1,0 +1,11 @@
+$TwitterHandle = "RepMcSally","RepSinema","kdeleon","SenFeinstein","MattCoreyCT","ChrisMurphyCT","RobArlett","SenatorCarper","SenBillNelson","scottforflorida","maziehirono","rcurtis808","braun4indiana","SenDonnelly","senatorbrakey","SenAngusKing","Campbell4MD","senatorcardin","RepGeoffDiehl","senwarren","JohnJamesMI","senstabenow","amyklobuchar","NewbergerJim","SenTinaSmith","KarinHousley","dbaria","SenatorWicker","espyforsenate","cindyhydesmith","HawleyMO","McCaskillOffice","MattForMontana","SenatorTester","JaneRaybould","SenatorFischer","DeanHeller","RepJackyRosen","SenatorMenendez","BobHugin","MickRich4Senate","MartinHeinrich","CheleFarley","SenGillibrand","senatorheitkamp","RepKevinCramer","RepJimRenacci","SenSherrodBrown","SenBobCasey","RepLouBarletta","NO TWITTER","SenWhitehouse","PhilBredesen","MarshaBlackburn","RepBetoORourke","tedcruz","mittromney","JennyWilsonUT","sensanders","NO TWITTER","timkaine","CoreyStewartVA","senatorcantwell","wagop","MorriseyWV","sen_joemanchin","LeahVukmir","tammybaldwin","TraunerforWY","SenJohnBarrasso"
+$State = "Arizona","Arizona","California","California","Connecticut","Connecticut","Delaware","Delaware","Florida","Florida","Hawaii","Hawaii","Indiana","Indiana","Maine","Maine","Maryland","Maryland","Massachusetts","Massachusetts","Michigan","Michigan","Minnesota","Minnesota","Minnesota-Special","Minnesota-Special","Mississippi","Mississippi","Mississippi-Special","Mississippi-Special","Missouri","Missouri","Montana","Montana","Nebraska","Nebraska","Nevada","Nevada","New Jersey","New Jersey","New Mexico","New Mexico","New York","New York","North Dakota","North Dakota","Ohio","Ohio","Pennsylvania","Pennsylvania","Rhode Island","Rhode Island","Tennessee","Tennessee","Texas","Texas","Utah","Utah","Vermont","Vermont","Virginia","Virginia","Washington","Washington","West Virginia","West Virginia","Wisconsin","Wisconsin","Wyoming","Wyoming"
+$x = 0
+
+Foreach ($i in $TwitterHandle){
+$CurrentState = $State[$x]
+Write-Host $State[$x]
+Write-Host "Downloading Tweets from " $i
+twitterscraper $i -u -o $CurrentState-$i".csv"
+$x = $x +1
+}
